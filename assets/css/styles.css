@@ -1,0 +1,348 @@
+:root {
+  --green-900: #0f3b2a;
+  --green-700: #1f6a4c;
+  --green-500: #2da66d;
+  --green-100: #eaf7ef;
+  --white: #ffffff;
+  --ink: #12231c;
+  --soft-shadow: 0 12px 36px rgba(15, 59, 42, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 8% 8%, rgba(45, 166, 109, 0.2), transparent 40%),
+    radial-gradient(circle at 95% 10%, rgba(31, 106, 76, 0.25), transparent 35%),
+    linear-gradient(165deg, #f8fffb 0%, #f2fbf5 45%, #ecf8f1 100%);
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+.bg-shape {
+  position: fixed;
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(2px);
+}
+
+.bg-shape-1 {
+  width: 360px;
+  height: 360px;
+  background: rgba(31, 106, 76, 0.14);
+  top: -120px;
+  right: -80px;
+}
+
+.bg-shape-2 {
+  width: 280px;
+  height: 280px;
+  background: rgba(45, 166, 109, 0.13);
+  left: -90px;
+  bottom: 10%;
+}
+
+.hero {
+  padding: 72px 20px 40px;
+  text-align: center;
+  animation: rise-in 700ms ease;
+}
+
+.eyebrow {
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green-700);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Oswald", "Trebuchet MS", sans-serif;
+  margin: 0 0 12px;
+  letter-spacing: 0.02em;
+}
+
+h1 {
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  line-height: 0.95;
+  color: var(--green-900);
+  margin-top: 14px;
+}
+
+.intro {
+  max-width: 760px;
+  margin: 0 auto;
+  color: #23483a;
+  font-size: 1.05rem;
+}
+
+main {
+  width: min(1120px, 92vw);
+  margin: 0 auto 52px;
+  display: grid;
+  gap: 22px;
+}
+
+.panel {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(3px);
+  border: 1px solid rgba(31, 106, 76, 0.18);
+  border-radius: 20px;
+  padding: 26px;
+  box-shadow: var(--soft-shadow);
+  animation: rise-in 700ms ease;
+}
+
+.countdown-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.time-box {
+  background: linear-gradient(150deg, #f5fff8, #e8f8ee);
+  border: 1px solid rgba(31, 106, 76, 0.2);
+  border-radius: 16px;
+  text-align: center;
+  padding: 16px 10px;
+}
+
+.time-value {
+  display: block;
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  font-weight: 700;
+  color: var(--green-900);
+}
+
+.time-label {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #38634f;
+}
+
+.target-date,
+.countdown-status,
+.map-note {
+  margin: 8px 0 0;
+  color: #2b5845;
+}
+
+.map-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.map-tools {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.phase-pill {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 8px 14px;
+  background: var(--green-100);
+  color: var(--green-900);
+  border: 1px solid rgba(31, 106, 76, 0.3);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.center-btn {
+  border: 1px solid rgba(31, 106, 76, 0.45);
+  background: linear-gradient(160deg, #f8fff9, #e6f6ec);
+  color: var(--green-900);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 140ms ease, box-shadow 140ms ease;
+}
+
+.center-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(15, 59, 42, 0.15);
+}
+
+.center-btn:active {
+  transform: translateY(0);
+}
+
+#map {
+  margin-top: 18px;
+  height: 430px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(31, 106, 76, 0.22);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.info-card {
+  background: #fbfffc;
+  border: 1px solid rgba(31, 106, 76, 0.2);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.info-card h3 {
+  margin-bottom: 8px;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: #dff3e7;
+  color: #1b5d42;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.gallery-item {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.gallery-grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(31, 106, 76, 0.22);
+  transition: transform 180ms ease, filter 180ms ease;
+}
+
+.gallery-item:hover img,
+.gallery-item:focus-visible img {
+  transform: scale(1.03);
+  filter: saturate(1.1);
+}
+
+.gallery-item:focus-visible {
+  outline: 2px solid var(--green-700);
+  outline-offset: 3px;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 24, 17, 0.78);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 30;
+}
+
+.lightbox.is-open {
+  display: flex;
+}
+
+.lightbox-content {
+  position: relative;
+  width: min(980px, 100%);
+  background: rgba(250, 255, 252, 0.98);
+  border: 1px solid rgba(31, 106, 76, 0.35);
+  border-radius: 16px;
+  padding: 16px 16px 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 1px solid rgba(31, 106, 76, 0.35);
+  background: #effbf3;
+  color: var(--green-900);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.lightbox-content img {
+  display: block;
+  width: 100%;
+  max-height: min(72vh, 760px);
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.lightbox-caption {
+  margin: 12px 4px 0;
+  color: #23483a;
+  text-align: center;
+  font-weight: 600;
+}
+
+footer {
+  text-align: center;
+  padding: 0 20px 28px;
+  color: #2f5c49;
+  font-size: 0.92rem;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .countdown-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .info-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #map {
+    height: 360px;
+  }
+}
